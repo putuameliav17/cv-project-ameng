@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Tailwind CSS</title>
+    <link href="dist/output.css" rel="stylesheet" />
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header Start -->
+    <header class="absolute top-0 left-0 z-10 flex w-full items-center bg-transparent">
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-4">
+           <a href="#home" class="block py-6 text-lg font-bold text-primary transition duration-300 ease-in-out hover:drop-shadow-[3px_3px_3px_rgba(0,0,0,0.8)] hover:scale-110">ASANSKARA</a>
+          </div>
+          <div class="flex items-center px-4">
+            <button id="hamburger" name="hamburger" type="button" class="absolute right-4 block lg:hidden">
+              <span class="hamburger-line origin-top-left transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line transition duration-300 ease-in-out"></span>
+              <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
+            </button>
+
+            <nav
+              id="nav-menu"
+              class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark dark:shadow-slate-500 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none lg:dark:bg-transparent"
+            >
+              <ul class="block lg:flex">
+                <li class="group">
+                  <a href="#home" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Beranda</a>
+                </li>
+                <li class="group">
+                  <a href="#about" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Tentang Saya</a>
+                </li>
+                <li class="group">
+                  <a href="#organisasi" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Organisasi</a>
+                </li>
+                <li class="group">
+                  <a href="#pekerjaan" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Pekerjaan</a>
+                </li>
+                <li class="group">
+                  <a href="#pendidikan" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Pendidikan</a>
+                </li>
+                <li class="group">
+                  <a href="#contact" class="mx-8 flex py-2 text-base text-dark group-hover:text-primary dark:text-white">Contact</a>
+                </li>
+                <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                  <div class="flex">
+                    <span class="mr-2 text-sm text-slate-500">light</span>
+                    <input type="checkbox" class="hidden" id="dark-toggle" />
+                    <label for="dark-toggle">
+                      <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                        <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                      </div>
+                    </label>
+                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <section id="home" class="pt-36 dark:bg-dark">
+      <div class="container flex justify-center">
+        <div class="flex flex-wrap">
+          <div class="w-full self-center px-4 lg:w-1/2">
+            <h1 class="text-base font-semibold text-primary md:text-xl">Halo Semua, saya <span class="mt-1 block text-4xl font-bold text-dark dark:text-white lg:text-5xl">Amelia Valentina</span></h1>
+            <h2 class="mb-5 text-lg font-medium text-secondary lg:text-2xl">Mahasiswa di <span class="text-dark dark:text-white font-semibold">Undiksha</span></h2>
+            <p class="mb-10 font-medium leading-relaxed text-secondary">Selamat datang di website pribadi saya, <span class="font-bold text-dark dark:text-white">Ayo berkenalan!</span></p>
+
+            <a href="jquery.html" class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-300 ease-in-out hover:opacity-80 hover:shadow-lg">Project Terkini</a>
+          </div>
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:right-0 lg:mt-9">
+              <img src="dist/img/fotoamelberanda.png" alt="Amelia Valentina" class="relative z-10 mx-auto max-w-full" />
+              <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                <svg width="450" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="#fda4af"
+                    d="M47.4,-51C59.2,-35.6,65.1,-17.8,63.4,-1.7C61.7,14.5,52.6,28.9,40.8,36.6C28.9,44.2,14.5,45,-2,47C-18.4,49,-36.8,52.1,-45.4,44.5C-53.9,36.8,-52.5,18.4,-51.2,1.3C-49.9,-15.8,-48.7,-31.7,-40.2,-47.1C-31.7,-62.4,-15.8,-77.3,1,-78.3C17.8,-79.2,35.6,-66.3,47.4,-51Z"
+                    transform="translate(100 100) scale(1.1)"
+                  />
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- About Section Start -->
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-10 w-full px-4 lg:w-1/2">
+            <h4 class="mb-3 text-lg font-bold uppercase text-primary">Tentang Saya</h4>
+            <h2 class="mb-5 max-w-md text-3xl font-bold text-dark dark:text-white lg:text-4xl">Pribadi yang Sangat Menyukai <span class="font-bold text-pink-400">Make-up</span></h2>
+            <p class="max-w-xl text-base font-medium text-secondary lg:text-lg">Saya adalah pribadi yang sangat menyukai make up. Bagi saya, make up bukan hanya sekadar mempercantik tampilan, tetapi juga media berekspresi, sarana berkreasi, serta cara untuk meningkatkan rasa percaya diri dan membagikan inspirasi kepada orang lain.</p>
+          </div>
+          <div class="w-full px-4 lg:w-1/2">
+            <h3 class="mb-4 text-2xl font-semibold text-dark dark:text-white lg:pt-10 lg:text-3xl">Ayo Mutulan di Sosial Media</h3>
+            <p class="mb-6 text-base font-medium text-secondary lg:text-lg">
+              Memiliki relasi yang baik merupakan kunci untuk bertukar ide, berbagi pengalaman, dan membuka peluang baru dalam kehidupan maupun karier. Relasi yang terjalin dengan tulus akan memperluas wawasan dan mempererat kebersamaan. Mari saling berkenalan dan terhubung melalui media sosial.
+            </p>
+            <div class="flex items-center">
+              <!-- Youtube -->
+              <a
+                href="https://www.youtube.com/@ameliavalentina2858"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>YouTube</title>
+                  <path
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/putuameliav?igsh=aTBqOWhpdTh1YWNx&utm_source=qr"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Instagram</title>
+                  <path
+                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Whatsapp -->
+              <a
+                href="https://wa.me/6285739063445"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Whatsapp</title>
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+              </a>
+
+              <!-- TikTok -->
+              <a
+                href="https://www.tiktok.com/@asanskara?_t=ZS-8zcxTGir0oD&_r=1"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>TikTok</title>
+                  <path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                  />
+                </svg>
+              </a>
+
+              <!-- Shopee -->
+              <a
+                href="http://shopee.co.id/ameliavlntna"
+                target="_blank"
+                class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+              >
+                <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title>Shopee</title>
+                  <path
+                    d="M15.9414 17.9633c.229-1.879-.981-3.077-4.1758-4.0969-1.548-.528-2.277-1.22-2.26-2.1719.065-1.056 1.048-1.825 2.352-1.85a5.2898 5.2898 0 0 1 2.8838.89c.116.072.197.06.263-.039.09-.145.315-.494.39-.62.051-.081.061-.187-.068-.281-.185-.1369-.704-.4149-.983-.5319a6.4697 6.4697 0 0 0-2.5118-.514c-1.909.008-3.4129 1.215-3.5389 2.826-.082 1.1629.494 2.1078 1.73 2.8278.262.152 1.6799.716 2.2438.892 1.774.552 2.695 1.5419 2.478 2.6969-.197 1.047-1.299 1.7239-2.818 1.7439-1.2039-.046-2.2878-.537-3.1278-1.19l-.141-.11c-.104-.08-.218-.075-.287.03-.05.077-.376.547-.458.67-.077.108-.035.168.045.234.35.293.817.613 1.134.775a6.7097 6.7097 0 0 0 2.8289.727 4.9048 4.9048 0 0 0 2.0759-.354c1.095-.465 1.8029-1.394 1.9449-2.554zM11.9986 1.4009c-2.068 0-3.7539 1.95-3.8329 4.3899h7.6657c-.08-2.44-1.765-4.3899-3.8328-4.3899zm7.8516 22.5981-.08.001-15.7843-.002c-1.074-.04-1.863-.91-1.971-1.991l-.01-.195L1.298 6.2858a.459.459 0 0 1 .45-.494h4.9748C6.8448 2.568 9.1607 0 11.9996 0c2.8388 0 5.1537 2.5689 5.2757 5.7898h4.9678a.459.459 0 0 1 .458.483l-.773 15.5883-.007.131c-.094 1.094-.979 1.9769-2.0709 2.0059z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Organisasai Section Start -->
+    <section id="organisasi" class="bg-slate-100 pt-36 pb-16 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Organisasi</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Pengalaman Organisasi</h2>
+            <p class="text-md font-medium text-secondary md:text-lg">
+              Aktif dalam organisasi memberikan kesempatan berharga untuk belajar, berkontribusi, serta menumbuhkan rasa tanggung jawab dan kepedulian terhadap lingkungan sekitar
+            </p>
+          </div>
+        </div>
+
+        <div class="flex w-full flex-wrap justify-center px-4 xl:mx-auto xl:w-10/12">
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="dist/img/portfolio/fotoportofolio1.jpeg" alt="Dokumentasi Anggota Bidang 4" width="w-full" />
+            </div>
+            <a href="https://www.instagram.com/p/DMj8xRaRb-5/?img_index=2&igsh=MXJ2c2xvdm5od2tmbw=="class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white hover:text-primary">Fungsionaris Bidang 4 HMJ TI 2025/2026 - Anggota Sub Bidang Intern Campus</a>
+            <p class="text-base font-medium text-secondary">Menjadi anggota Bidang 4 Sub Bidang Intern Campus memberikan pengalaman berharga dalam mempererat hubungan internal, membangun kerja sama, serta menciptakan lingkungan kampus yang solid dan harmonis.</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="dist/img/portfolio/fotoportofolio2.jpeg" alt="Dokumentasi Kegiatan RAKER HMJ TI 2025/2026" width="w-full" />
+            </div>
+            <a href="https://www.instagram.com/reel/DJ_R2nHvb5V/?igsh=MW11djhtaWRibWJpaQ==" class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white hover:text-primary">Koordinator Kesekretariatan - RAKER HMJ TI 2025/2026</a>
+            <p class="text-base font-medium text-secondary">Menjadi Koordinator Kesekretariatan dalam kegiatan RAKER HMJ TI 2025/2026 memberikan kesempatan berharga untuk mengasah keterampilan administrasi, meningkatkan ketelitian, serta mendukung kelancaran jalannya program kerja organisasi.</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="dist/img/portfolio/fotoportofolio3.jpeg" alt="Dokumentsi Kegiatan IT Camp " width="w-full" />
+            </div>
+            <a href="https://www.instagram.com/reel/DKmLpD3xULA/?igsh=MXJ3eWFsYW80YXd2dQ==" class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white hover:text-primary">Anggota Publikasi & Dokumentasi - IT Camp</a>
+            <p class="text-base font-medium text-secondary">Bergabung sebagai anggota Pubdok IT Camp menjadi pengalaman berharga untuk mengasah kreativitas dalam mendokumentasikan kegiatan, mengelola publikasi, serta menyebarkan informasi yang menarik dan bermanfaat bagi seluruh peserta.</p>
+          </div>
+          <div class="mb-12 p-4 md:w-1/2">
+            <div class="overflow-hidden rounded-md shadow-md">
+              <img src="dist/img/portfolio/fotoportofolio4.jpeg" alt="Dokumentasi IT Educare" width="w-full" />
+            </div>
+            <a href="https://www.instagram.com/reel/DMUvTBMxxVk/?igsh=MW9nMDZyZ3ZidDFrOA==" class="mt-5 mb-3 text-xl font-semibold text-dark dark:text-white hover:text-primary">Sekretaris - IT Educare</a>
+            <p class="text-base font-medium text-secondary">Menjadi Sekretaris IT Educare memberikan pengalaman berharga dalam mengelola administrasi, menyusun laporan, serta mendukung kelancaran komunikasi dan koordinasi kegiatan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Organisasai Section End -->
+
+    <!-- Pekerjaan Section Start -->
+    <section id="pekerjaan" class="bg-slate-800 pt-36 pb-32 dark:bg-slate-300">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Pekerjaan</h4>
+            <h2 class="mb-4 text-3xl font-bold text-white dark:text-dark sm:text-4xl lg:text-5xl">Riwayat Kerja</h2>
+            <p class="text-md font-medium text-secondary md:text-lg">Riwayat pekerjaan mencerminkan pengalaman praktis dalam dunia kerja. Setiap posisi yang pernah dijalani memberikan kesempatan untuk mengasah keterampilan, memperluas relasi, serta meningkatkan profesionalitas dalam menghadapi berbagai tantangan. Sebelum memasuki dunia IT di kampus, saya pernah bekerja dalam bidang food & Bevarage sebagai waitress.</p>
+          </div>
+        </div>
+
+        <div class="w-full px-4">
+          <div class="flex flex-wrap items-center justify-center">
+            <a href="https://www.instagram.com/ayanaresort?igsh=MWpkZzYzZ3JtMzZ1dQ==" class="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+              <img src="dist/img/tempatkerja/logoayanasegara.png" alt="Ayana Segara" />
+            </a>
+            <a href="https://www.instagram.com/warunglocal?igsh=Nmp2YWwwcHJ2ZjRy" class="mx-4 max-w-[120px] rounded-full object-cover py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8">
+              <img src="dist/img/tempatkerja/logowarunglocal.png" alt="Warung LOcal" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pekerjaan Section End -->
+
+    <!-- Pendidikan Section Start -->
+    <section id="pendiidkan" class="bg-slate-100 pt-36 pb-32 dark:bg-dark">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Pendidikan</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">Riwayat Pendidikan</h2>
+            <p class="text-md font-medium text-secondary md:text-lg">Riwayat pendidikan menjadi bagian penting dalam perjalanan hidup, membentuk dasar pengetahuan dan keterampilan yang mendukung pengembangan diri serta karier di masa depan.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap">
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+              <img src="dist/img/sekolah/fotosd.jpg" alt="SD No 3 Ungasan" class="w-full" />
+              <div class="py-8 px-6">
+                <h3>
+                  <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x2dd25b45e7c2bc91:0x164059d402548959?entry=s&sa=X&ved=2ahUKEwjcoNedg9KPAxXkUGwGHcQ8AKQQ4kB6BAgVEAA" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">SD No. 3 Ungasan</a>
+                </h3>
+                <p class="mb-6 text-base font-medium text-secondary">Mengawali pendidikan dasar di SD No. 3 Ungasan pada periode 2011 - 2017</p>
+                <a href="https://sekolah.data.kemendikdasmen.go.id/index.php/Chome/profil/E0EDD914-31F5-E011-896B-D7A6F1552437" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Detail SD</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+              <img src="dist/img/sekolah/fotosmp.jpg" alt="SMP Negeri 2 Kuta Selatan" class="w-full" />
+              <div class="py-8 px-6">
+                <h3>
+                  <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x2dd25caecfcd73a1:0xedc77c08f65cccd?entry=s&sa=X&ved=2ahUKEwitv-2mg9KPAxUgXGwGHSIoGUQQ4kB6BAgaEAA" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">SMP Negeri 2 Kuta Selatan</a>
+                </h3>
+                <p class="mb-6 text-base font-medium text-secondary">SMP Negeri 2 Kuta Selatan merupakan pendidikan lanjutan pertama pada periode 2017 - 2020</p>
+                <a href="https://smpn2kutaselatan.sch.id/" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Detail SMP</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+              <img src="dist/img/sekolah/fotosma.jpg" alt="SMA Negeri 1 Kuta Selatan" class="w-full" />
+              <div class="py-8 px-6">
+                <h3>
+                  <a href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x2dd21665cef49255:0x1abe2912c8d6af5a?entry=s&sa=X&ved=2ahUKEwjCwJGyg9KPAxURT2cHHbgeGbsQ4kB6BAgVEAA" class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">SMA Negeri 1 Kuta Selatan</a>
+                </h3>
+                <p class="mb-6 text-base font-medium text-secondary">Melanjutkan pendidikan pada tingkat atas di SMA Negeri 1 Kuta Selatan pada periode 2020-2023</p>
+                <a href="https://smansakutsel.sch.id/" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Detail SMA</a>
+              </div>
+            </div>
+          </div>
+          <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
+            <div class="mb-10 overflow-hidden rounded-xl bg-white shadow-lg dark:bg-slate-800">
+              <img src="dist/img/sekolah/fotokuliah.jpg" alt="Universitas Pendidikan Ganesha" class="w-full" />
+              <div class="py-8 px-6">
+                <h3>
+                  <a class="mb-3 block truncate text-xl font-semibold text-dark hover:text-primary dark:text-white">S1 Sistem Informasi - Universitas Pendidikan Ganesha </a>
+                </h3>
+                <p class="mb-6 text-base font-medium text-secondary">Melanjutkan ke tingkat perguruan tinggi pada periode 2024 - sekarang</p>
+                <a href="https://undiksha.ac.id/akademik/fakultas/fakultas-teknik-dan-kejuruan/sistem-informasi/" class="rounded-lg bg-primary py-2 px-4 text-sm font-medium text-white hover:opacity-80">Detail Kampus</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Pendidikan Section End -->
+
+    <!-- Contact Section Start -->
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
+      <div class="container">
+        <div class="w-full px-4">
+          <div class="mx-auto mb-16 max-w-xl text-center">
+            <h4 class="mb-2 text-lg font-semibold text-primary">Contact</h4>
+            <h2 class="mb-4 text-3xl font-bold text-dark dark:text-white sm:text-4xl lg:text-5xl">
+              Hubungi Saya
+            </h2>
+            <p class="text-md font-medium text-secondary md:text-lg">
+              Bagi yang ingin menambah relasi atau memiliki kepentingan dengan saya untuk berkomunikasi silahkan hubungi saya melalui email yang bisa diisi di kolom bawah ini.
+            </p>
+          </div>
+        </div>
+
+        <form id="contact-form">
+          <div class="w-full lg:mx-auto lg:w-2/3">
+            <div class="mb-8 w-full px-4">
+              <label for="name" class="text-base font-bold text-primary">Nama</label>
+              <input type="text" id="name" name="name" placeholder="Tuliskan Email Anda"
+                class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+            <div class="mb-8 w-full px-4">
+              <label for="email" class="text-base font-bold text-primary">Email</label>
+              <input type="email" id="email" name="email" placeholder="Tulis Emailmu (bukan email yang dituju ya, tapi emailmu sendiri )"
+                class="w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" />
+            </div>
+            <div class="mb-8 w-full px-4">
+              <label for="message" class="text-base font-bold text-primary">Pesan</label>
+              <textarea id="message" name="message name" placeholder="Tulis pesan untukku (apa saja boleh)"
+                class="h-32 w-full rounded-md bg-slate-200 p-3 text-dark focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"></textarea>
+            </div>
+            <div class="w-full px-4">
+              <button type="submit"
+                class="w-full rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 hover:opacity-80 hover:shadow-lg">
+                Kirim
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Tambahkan SweetAlert2 + Animate.css start-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+      const form = document.getElementById("contact-form");
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        Swal.fire({
+          title: "Mengirim...",
+          text: "tunggu sebentar ya cantik/ganteng",
+          allowOutsideClick: false,
+          didOpen: () => {
+            Swal.showLoading();
+          }
+        });
+
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          message: form.message.value
+        };
+
+        try {
+          const response = await fetch("https://formspree.io/f/mandknnv", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+
+          if (response.ok) {
+            Swal.fire({
+              title: "Berhasil ✅",
+              text: "Yeayyy, Pesan kamu sudah terkirim!",
+              icon: "success",
+              showClass: {
+                popup: "animate__animated animate__fadeInDown"
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOutUp"
+              }
+            });
+            form.reset();
+          } else {
+            Swal.fire({
+              title: "Gagal ❌",
+              text: "Sorry, Terjadi kesalahan saat mengirim pesan.",
+              icon: "error",
+              showClass: {
+                popup: "animate__animated animate__shakeX"
+              },
+              hideClass: {
+                popup: "animate__animated animate__fadeOut"
+              }
+            });
+          }
+        } catch (error) {
+          Swal.fire({
+            title: "Error ❌",
+            text: "Hikss, Koneksi bermasalah. Silakan coba lagi.",
+            icon: "error",
+            showClass: {
+              popup: "animate__animated animate__shakeY"
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOut"
+            }
+          });
+        }
+      });
+    </script>
+    <!-- Tambahkan SweetAlert2 + Animate.css  end-->
+
+    <!-- Footer Start -->
+    <footer class="bg-dark pt-24 pb-12 p-4 sm:p-6 lg:p-10">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="mb-12 w-full px-4 font-medium text-slate-300">
+            <h2 class="mb-5 text-4xl font-bold text-white text-center">ASANSKARA</h2>
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <div class="flex flex-col md:flex-row gap-8 max-w-4xl w-full px-4">
+            <div class="w-full md:w-1/3 text-cetert">
+              <h3 class="mb-2 text-2xl font-bold text-white">Hubungi Saya</h3>
+              <p class="text-slate-300">ameliavalentinaputri@gmail.com</p>
+              <p class="text-slate-300">Jl. Gunung Rinjani Blok IIC Gang 2</p>
+              <p class="text-slate-300">Singaraja</p>
+            </div>
+            <div class="w-full md:w-1/3 text-center">
+              <h3 class="mb-5 text-xl font-semibold text-white">Tautan</h3>
+              <ul class="text-slate-300">
+                <li><a href="#home" class="mb-3 inline-block text-base hover:text-white transition">Beranda</a></li>
+                <li><a href="#about" class="mb-3 inline-block text-base hover:text-white transition">Tentang Saya</a></li>
+                <li><a href="#organisasi" class="mb-3 inline-block text-base hover:text-white transition">Organisasi</a></li>
+                <li><a href="#pekerjaan" class="mb-3 inline-block text-base hover:text-white transition">Pekerjaan</a></li>
+                <li><a href="#pendidikan" class="mb-3 inline-block text-base hover:text-white transition">Pendidikan</a></li>
+                <li><a href="#contact" class="mb-3 inline-block text-base hover:text-white transition">Contact</a></li>
+              </ul>
+            </div>
+             <div class="w-full md:w-1/3 text-center">
+              <h3 class="mb-2 text-2xl font-bold text-white">Kepribadian</h3>
+              <p class="text-slate-300">Jujur</p>
+              <p class="text-slate-300">Bertanggungjawab</p>
+              <p class="text-slate-300">Suka Menolong</p>
+              <p class="text-slate-300">Periang</p>
+              <p class="text-slate-300">Penyayang</p>
+            </div>
+          </div>  
+        </div>
+        <div class="w-full border-t border-slate-700 pt-10">
+          <div class="mb-5 flex items-center justify-center">
+            <!-- Youtube -->
+            <a
+              href="https://www.youtube.com/@ameliavalentina2858"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>YouTube</title>
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/putuameliav?igsh=aTBqOWhpdTh1YWNx&utm_source=qr"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Instagram</title>
+                <path
+                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"
+                />
+              </svg>
+            </a>
+
+            <!-- Whatsapp -->
+            <a
+              href="https://wa.me/6285739063445"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Whatsapp</title>
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                />
+                </svg>
+            </a>
+
+            <!-- TikTok -->
+            <a
+              href="https://www.tiktok.com/@asanskara?_t=ZS-8zcxTGir0oD&_r=1"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>TikTok</title>
+                <path
+                  d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"
+                />
+              </svg>
+            </a>
+
+            <!-- Shopee -->
+            <a
+              href="http://shopee.co.id/ameliavlntna"
+              target="_blank"
+              class="mr-3 flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white"
+            >
+              <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <title>Shopee</title>
+                <path
+                  d="M15.9414 17.9633c.229-1.879-.981-3.077-4.1758-4.0969-1.548-.528-2.277-1.22-2.26-2.1719.065-1.056 1.048-1.825 2.352-1.85a5.2898 5.2898 0 0 1 2.8838.89c.116.072.197.06.263-.039.09-.145.315-.494.39-.62.051-.081.061-.187-.068-.281-.185-.1369-.704-.4149-.983-.5319a6.4697 6.4697 0 0 0-2.5118-.514c-1.909.008-3.4129 1.215-3.5389 2.826-.082 1.1629.494 2.1078 1.73 2.8278.262.152 1.6799.716 2.2438.892 1.774.552 2.695 1.5419 2.478 2.6969-.197 1.047-1.299 1.7239-2.818 1.7439-1.2039-.046-2.2878-.537-3.1278-1.19l-.141-.11c-.104-.08-.218-.075-.287.03-.05.077-.376.547-.458.67-.077.108-.035.168.045.234.35.293.817.613 1.134.775a6.7097 6.7097 0 0 0 2.8289.727 4.9048 4.9048 0 0 0 2.0759-.354c1.095-.465 1.8029-1.394 1.9449-2.554zM11.9986 1.4009c-2.068 0-3.7539 1.95-3.8329 4.3899h7.6657c-.08-2.44-1.765-4.3899-3.8328-4.3899zm7.8516 22.5981-.08.001-15.7843-.002c-1.074-.04-1.863-.91-1.971-1.991l-.01-.195L1.298 6.2858a.459.459 0 0 1 .45-.494h4.9748C6.8448 2.568 9.1607 0 11.9996 0c2.8388 0 5.1537 2.5689 5.2757 5.7898h4.9678a.459.459 0 0 1 .458.483l-.773 15.5883-.007.131c-.094 1.094-.979 1.9769-2.0709 2.0059z"
+                />
+              </svg>
+            </a>
+          </div>
+          <p class="text-center text-xs font-medium text-slate-500">
+            Website ini dibuat oleh <span class="text-pink-500">seoarang individu</span> bernama <a href="https://instagram.com/putuameliav" target="_blank" class="font-bold text-primary">Putu Amelia Valentina Putri</a>,
+            <a target="_blank" class="font-bold text-sky-500">sebagai portofolio pribadi</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to top Start -->
+    <a href="#home" class="fixed bottom-4 right-4 z-[9999] hidden h-14 w-14 items-center justify-center rounded-full bg-primary p-4 hover:animate-pulse" id="to-top">
+      <span class="mt-2 block h-5 w-5 rotate-45 border-t-2 border-l-2"></span>
+    </a>
+    <!-- Back to top End -->
+
+    <script src="dist/js/script.js"></script>
+  </body>
+</html>

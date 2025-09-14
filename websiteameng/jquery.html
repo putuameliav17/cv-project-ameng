@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator Bangun Datar</title>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body class="relative min-h-screen flex items-center justify-center bg-[url('/dist/img/background/3.png')] bg-cover bg-center">
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- Card -->
+  <div class="relative z-10 w-full max-w-lg bg-white rounded-2xl shadow-2xl p-8">
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-extrabold text-[#881337]">Kalkulator Bangun Datar</h2>
+      <p class="mt-1 text-sm text-gray-600">Pilih bentuk favoritmu dan hitung luasnya</p>
+    </div>
+
+    <form id="calcForm" class="space-y-5">
+      <!-- Pilihan -->
+      <div>
+        <label for="selects" class="block text-sm font-semibold text-[#881337] mb-1">Pilih Bangun Datar</label>
+        <select id="selects" class="w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 focus:ring-2 focus:ring-[#db2777]">
+          <option value="persegi-panjang">📏 Persegi Panjang</option>
+          <option value="segitiga">🔺 Segitiga</option>
+          <option value="persegi">⬛ Persegi</option>
+          <option value="lingkaran">⚪ Lingkaran</option>
+          <option value="jajargenjang">⬜ Jajar Genjang</option>
+          <option value="belahketupat">💎 Belah Ketupat</option>
+          <option value="trapesium">🟪 Trapesium</option>
+          <option value="layang">🪁 Layang-layang</option>
+        </select>
+      </div>
+
+      <!-- Persegi Panjang -->
+      <div id="persegi-panjang" class="input-section space-y-3">
+        <label class="block text-sm font-semibold text-[#881337]">📏 Persegi Panjang</label>
+        <input id="pp-panjang" type="number" placeholder="Panjang" class="input-box" />
+        <input id="pp-lebar" type="number" placeholder="Lebar" class="input-box" />
+      </div>
+
+      <!-- Segitiga -->
+      <div id="segitiga" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">🔺 Segitiga</label>
+        <input id="sg-alas" type="number" placeholder="Alas" class="input-box" />
+        <input id="sg-tinggi" type="number" placeholder="Tinggi" class="input-box" />
+      </div>
+
+      <!-- Persegi -->
+      <div id="persegi" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">⬛ Persegi</label>
+        <input id="ps-sisi" type="number" placeholder="Sisi" class="input-box" />
+      </div>
+
+      <!-- Lingkaran -->
+      <div id="lingkaran" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">⚪ Lingkaran</label>
+        <input id="lg-jari" type="number" placeholder="Jari-jari" class="input-box" />
+      </div>
+
+      <!-- Jajar Genjang -->
+      <div id="jajargenjang" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">⬜ Jajar Genjang</label>
+        <input id="jg-alas" type="number" placeholder="Alas" class="input-box" />
+        <input id="jg-tinggi" type="number" placeholder="Tinggi" class="input-box" />
+      </div>
+
+      <!-- Belah Ketupat -->
+      <div id="belahketupat" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">💎 Belah Ketupat</label>
+        <input id="bk-d1" type="number" placeholder="Diagonal 1" class="input-box" />
+        <input id="bk-d2" type="number" placeholder="Diagonal 2" class="input-box" />
+      </div>
+
+      <!-- Trapesium -->
+      <div id="trapesium" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">🟪 Trapesium</label>
+        <input id="tp-a" type="number" placeholder="Sisi Atas" class="input-box" />
+        <input id="tp-b" type="number" placeholder="Sisi Bawah" class="input-box" />
+        <input id="tp-tinggi" type="number" placeholder="Tinggi" class="input-box" />
+      </div>
+
+      <!-- Layang-layang -->
+      <div id="layang" class="input-section space-y-3 hidden">
+        <label class="block text-sm font-semibold text-[#881337]">🪁 Layang-layang</label>
+        <input id="ly-d1" type="number" placeholder="Diagonal 1" class="input-box" />
+        <input id="ly-d2" type="number" placeholder="Diagonal 2" class="input-box" />
+      </div>
+
+      <!-- Hasil -->
+      <div>
+        <label class="block text-sm font-semibold text-[#881337]">Hasil Luas</label>
+        <input id="hasil" type="text" readonly class="w-full rounded-lg border border-gray-300 bg-gray-100 px-3 py-2 text-lg font-bold text-[#db2777] cursor-not-allowed" />
+      </div>
+
+      <!-- Tombol -->
+      <div class="flex justify-between">
+        <button type="button" id="resetBtn" class="w-1/3 rounded-lg bg-[#881337] py-2 text-white font-semibold hover:bg-[#db2777] transition">Reset</button>
+        <a href="index.html" class="w-1/3 text-center rounded-lg bg-[#881337] py-2 text-white font-semibold hover:bg-[#db2777] transition text-sm"> Kembali ke Halaman Utama</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      // Switch tampilan input
+      $("#selects").change(function(){
+        let pilihan = $(this).val();
+        $(".input-section").hide();
+        $("#" + pilihan).fadeIn();
+        $("#hasil").val("");
+      });
+
+      // Rumus luas
+      $("#pp-panjang, #pp-lebar").on("input", ()=> {
+        let p = +$("#pp-panjang").val() || 0, l = +$("#pp-lebar").val() || 0;
+        $("#hasil").val(p*l);
+      });
+
+      $("#sg-alas, #sg-tinggi").on("input", ()=> {
+        let a = +$("#sg-alas").val() || 0, t = +$("#sg-tinggi").val() || 0;
+        $("#hasil").val(0.5*a*t);
+      });
+
+      $("#ps-sisi").on("input", ()=> {
+        let s = +$("#ps-sisi").val() || 0;
+        $("#hasil").val(s*s);
+      });
+
+      $("#lg-jari").on("input", ()=> {
+        let r = +$("#lg-jari").val() || 0;
+        $("#hasil").val((Math.PI*r*r).toFixed(2));
+      });
+
+      $("#jg-alas, #jg-tinggi").on("input", ()=> {
+        let a = +$("#jg-alas").val() || 0, t = +$("#jg-tinggi").val() || 0;
+        $("#hasil").val(a*t);
+      });
+
+      $("#bk-d1, #bk-d2").on("input", ()=> {
+        let d1 = +$("#bk-d1").val() || 0, d2 = +$("#bk-d2").val() || 0;
+        $("#hasil").val(0.5*d1*d2);
+      });
+
+      $("#tp-a, #tp-b, #tp-tinggi").on("input", ()=> {
+        let a = +$("#tp-a").val() || 0, b = +$("#tp-b").val() || 0, t = +$("#tp-tinggi").val() || 0;
+        $("#hasil").val(0.5*(a+b)*t);
+      });
+
+      $("#ly-d1, #ly-d2").on("input", ()=> {
+        let d1 = +$("#ly-d1").val() || 0, d2 = +$("#ly-d2").val() || 0;
+        $("#hasil").val(0.5*d1*d2);
+      });
+
+      // Reset
+      $("#resetBtn").click(()=> {
+        $("#calcForm")[0].reset();
+        $("#hasil").val("");
+        $(".input-section").hide();
+        $("#persegi-panjang").show();
+      });
+    });
+  </script>
+
+  <style>
+    .input-box {
+      @apply w-full rounded-lg border border-gray-300 bg-gray-50 px-3 py-2 focus:ring-2 focus:ring-[#db2777] focus:border-[#db2777];
+    }
+  </style>
+</body>
+</html>
